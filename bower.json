@@ -1,0 +1,22 @@
+{
+  "name": "hallo",
+  "main": "./assets/javascripts/autoload.js",
+  "directory": "./assets/components",
+  "license": "GPL-2.0",
+  "ignore": [
+    "**/.*",
+    "assets/components"
+  ],
+  "dependencies": {
+    "jquery": "1.9.x",
+    "jquery-ui": "1.10.x",
+    "jquery-htmlclean": "1.3.x",
+    "rangy-official": "1.3.x",
+    "font-awesome": "4.2.x",
+    "requirejs": "2.1.x",
+    "hallo": "1.1.x",
+    "to-markdown": "1.3.x",
+    "showdown": "1.2.x",
+    "showdown-github": "1.0.x"
+  }
+}
