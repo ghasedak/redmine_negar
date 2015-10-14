@@ -71,7 +71,7 @@ define(
 			sourceEditor: sourceEditor
 		});
 
-
+		// Method that converts the Markdown contents to HTML
 		var updateHtml = function(content) {
 			if (markdownize($(this.previewer).html()) == content) {
 			  return;
@@ -83,7 +83,7 @@ define(
 			previewer: previewer
 		});
 
-		// Update Markdown every time content is modified
+		// Update Markdown every time HTML content is modified
 		$(previewer).bind(
 			'hallomodified',
 			function(event, data) {
@@ -92,6 +92,8 @@ define(
 				showSource: showSource
 			})
 		);
+
+		// Update HTML every time markdown is modified
 		$(sourceEditor).bind(
 			'keyup',
 			function (eData) {
@@ -100,6 +102,8 @@ define(
 				updateHtml: updateHtml
 			})
 		);
+
+		// Initial content loading
 		updateHtml(sourceEditor.value);
 	}
 );
