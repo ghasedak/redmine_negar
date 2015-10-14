@@ -3,6 +3,7 @@ This is a redmine editor plug-in which you can edit texts in rich and markdown f
 
 # Table of Contents
 1. [Installation](#installation)
+1. [Activation](#activation)
 
 ## Installation
 Just copy this repo into redmine plugins directory and do migration and restart server:
@@ -29,3 +30,6 @@ Do the migration:
 ```
 RAILS_ENV=production bundle exec rake db:migrate --trace
 ```
+
+## Activation
+Go to http://your-redmine-address/settings#settings_text_formatting and change editor to Negar
