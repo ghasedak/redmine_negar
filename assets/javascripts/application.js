@@ -10,8 +10,15 @@ define(
 
 		var parent = $(sourceEditor).parent().get(0);
 
-		var previewer = parent.insertBefore(document.createElement('div'), parent.children[1]);
+		var previewer = sourceEditor.nextSibling ?
+			parent.insertBefore(document.createElement('div'), sourceEditor.nextSibling) :
+			parent.appendChild(document.createElement('div'));
 		previewer.id = hallojs.preview_id;
+		var compStyle = window.getComputedStyle(sourceEditor);
+		previewer.style.height = String(
+			Number(/\d+/.exec(compStyle.height)[0]) - 
+				(Number(/\d+/.exec(compStyle.paddingBottom)[0]) + Number(/\d+/.exec(compStyle.paddingTop)[0]))
+		) + 'px';
 		previewer.classList.add('code', 'preview');
 		var attrContentEditable = document.createAttribute('contenteditable');
 		attrContentEditable.value = true;
