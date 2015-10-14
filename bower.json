@@ -1,7 +1,7 @@
 {
-  "name": "redmine_hallojs",
+  "name": "redmine_negar",
   "description": "Redmine Rich + Markdown Editor",
-  "homepage": "http://github.com/ghasedak/redmine_hallojs",
+  "homepage": "https://github.com/ghasedak/redmine_negar",
   "version": "1.0.0",
   "authors": [
     "Pouyan Heyratpour <p.heyratpour@gmail.com>"
@@ -29,7 +29,10 @@
     "showdown-github": "1.0.x"
   },
   "keywords": [
-    "hallojs"
+    "redmine",
+    "markdown",
+    "wysiwyg",
+    "negar"
   ],
   "resolutions": {
     "showdown": "1.2.x"

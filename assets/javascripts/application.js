@@ -5,7 +5,7 @@ define(
 		window.rangy = rangy;
 		window.showdown = showdown;
 
-		var sourceEditor = $('#' + hallojs.source_id).get(0);
+		var sourceEditor = $('#' + negar.source_id).get(0);
 		sourceEditor.classList.add('code', 'content');
 
 		var parent = $(sourceEditor).parent().get(0);
@@ -13,7 +13,7 @@ define(
 		var previewer = sourceEditor.nextSibling ?
 			parent.insertBefore(document.createElement('div'), sourceEditor.nextSibling) :
 			parent.appendChild(document.createElement('div'));
-		previewer.id = hallojs.preview_id;
+		previewer.id = negar.preview_id;
 		var compStyle = window.getComputedStyle(sourceEditor);
 		previewer.style.height = String(
 			Number(/\d+/.exec(compStyle.height)[0]) - 
