@@ -1,10 +1,10 @@
-module RedmineHallojs::WikiFormatting
+module RedmineNegar::WikiFormatting
 	module Helper
 		def editor_env(field_id)
-			root = RedmineHallojs.assets_root
+			root = RedmineNegar.assets_root
 			javascript_tag(
 				<<-EOT
-				hallojs = {
+				negar = {
 					'assets_root': '#{root}',
 					'source_id': '#{field_id}',
 					'preview_id': '#{field_id}_preview'
@@ -15,9 +15,9 @@ module RedmineHallojs::WikiFormatting
 
 	    def wikitoolbar_for(field_id)
 	    	content_for :header_tags do
-	    		stylesheet_link_tag('editor', :plugin => 'redmine_hallojs') +
-	    		stylesheet_link_tag('/plugin_assets/redmine_hallojs/components/font-awesome/css/font-awesome.min.css') +
-	    		hallojs_javascripts
+	    		stylesheet_link_tag('editor', :plugin => 'redmine_negar') +
+	    		stylesheet_link_tag('/plugin_assets/redmine_negar/components/font-awesome/css/font-awesome.min.css') +
+	    		negar_javascripts
     		end
 
 	    	editor_env(field_id)

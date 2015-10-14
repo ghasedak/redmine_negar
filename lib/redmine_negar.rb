@@ -1,4 +1,4 @@
-module RedmineHallojs
+module RedmineNegar
 	extend ActionView::Helpers
 
 	class << self
@@ -7,7 +7,7 @@ module RedmineHallojs
 		end
 
 		def assets_root
-			@assets_root ||= "#{Redmine::Utils.relative_url_root}/plugin_assets/redmine_hallojs"
+			@assets_root ||= "#{Redmine::Utils.relative_url_root}/plugin_assets/redmine_negar"
 		end
 
 		def config
@@ -15,11 +15,11 @@ module RedmineHallojs
 		end
 
 		def enabled?
-			Setting.text_formatting == "Hallojs"
+			Setting.text_formatting == "Negar"
 		end
 
-		def apply_hallo
-			require 'redmine_hallojs/application_helper_patch'
+		def apply_negar
+			require 'redmine_negar/application_helper_patch'
 		end
 	end
 end
