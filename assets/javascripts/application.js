@@ -17,6 +17,10 @@ define(
 		attrContentEditable.value = true;
 		previewer.attributes.setNamedItem(attrContentEditable);
 
+		// The clear div
+		var clear = parent.insertBefore(document.createElement('div'), previewer.nextSibling);
+		clear.classList.add('clear');
+
 		$(previewer).hallo({
 			'plugins': {
 				'halloformat': {

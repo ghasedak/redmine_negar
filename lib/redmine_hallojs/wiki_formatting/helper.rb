@@ -25,7 +25,7 @@ module RedmineHallojs::WikiFormatting
 
 	    # When wiki page is black, page content set to this
 	    def initial_page_content(page)
-	      "<h1>#{ERB::Util.html_escape page.pretty_title}</h1>"
+	      "# #{ERB::Util.html_escape page.pretty_title}"
 	    end
 
 	    def heads_for_wiki_formatter

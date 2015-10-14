@@ -2,14 +2,16 @@
 	margin: 5px auto;
 	width: 45% !important;
 	min-width: 300px;
-	height: 430px;
+	height: 450px;
+	padding: 7px;
 }
 
 .preview {
 	margin-left: 10px;
 	float: left;
 	overflow: auto;
-	border: 1px solid black;
+	border: 1px solid #DDD;
+	height: 436px;
 }
 
 .content {
