@@ -11,7 +11,7 @@ Supposing you've installed redmine into ```/usr/share/redmine```:
 cd /usr/share/redmine/plugins
 ```
 
-Download plugin (using git)[#using-git] or (using wget)[#using-wget]
+Download plugin [using git](#using-git) or [using wget](#using-wget)
 ### Using Git
 ```
 git clone https://github.com/ghasedak/redmine_negar
