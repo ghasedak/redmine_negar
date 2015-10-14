@@ -11,8 +11,8 @@ Redmine::Plugin.register :redmine_negar do
 	description 'Redmine markdown/rich editor plug-in'
 	version '1.0.0'
 	requires_redmine :version_or_higher => '3.0.0'
-	url 'https://github.com/ghasedak/redmine_negar',
-	author_url 'https://github.com/pouyanh',
+	url 'https://github.com/ghasedak/redmine_negar'
+	author_url 'https://github.com/pouyanh'
 
 	settings(:partial => 'settings/negar')
 
