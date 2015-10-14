@@ -4,8 +4,7 @@ module ApplicationHelper
 	def hallojs_javascripts
     	root = RedmineHallojs.assets_root
     	javascript_include_tag(
-    		"components/requirejs/require.js",
-    		:plugin => "redmine_hallojs",
+    		"/plugin_assets/redmine_hallojs/components/requirejs/require.js",
     		:'data-main' => "#{root}/javascripts/autoload.js"
 		)
 	end

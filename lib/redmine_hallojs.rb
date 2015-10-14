@@ -24,3 +24,4 @@ module RedmineHallojs
 	end
 end
 
+require 'redmine_hallojs/hooks/wiki_edit_listener'

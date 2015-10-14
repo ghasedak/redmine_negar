@@ -5,7 +5,19 @@ define(
 		window.rangy = rangy;
 		window.showdown = showdown;
 
-		$('.preview').hallo({
+		var sourceEditor = $('#' + hallojs.source_id).get(0);
+		sourceEditor.classList.add('code', 'content');
+
+		var parent = $(sourceEditor).parent().get(0);
+
+		var previewer = parent.insertBefore(document.createElement('div'), parent.children[1]);
+		previewer.id = hallojs.preview_id;
+		previewer.classList.add('code', 'preview');
+		var attrContentEditable = document.createAttribute('contenteditable');
+		attrContentEditable.value = true;
+		previewer.attributes.setNamedItem(attrContentEditable);
+
+		$(previewer).hallo({
 			'plugins': {
 				'halloformat': {
 					 'formattings': {
@@ -40,25 +52,28 @@ define(
 		// Method that converts the HTML contents to Markdown
 		var showSource = function(content) {
 			var markdown = markdownize(content);
-			if (jQuery('#source').get(0).value == markdown) {
+			if ($(sourceEditor).get(0).value == markdown) {
 			  return;
 			}
-			jQuery('#source').get(0).value = markdown;
-		};
+			$(sourceEditor).get(0).value = markdown;
+		}.bind({
+			sourceEditor: sourceEditor
+		});
 
 
 		var updateHtml = function(content) {
-			if (markdownize(jQuery('.preview').html()) == content) {
+			if (markdownize($(this.previewer).html()) == content) {
 			  return;
 			}
 			var html = this.htmlize(content);
-			jQuery('.preview').html(html); 
+			$(this.previewer).html(html); 
 		}.bind({
-			htmlize: converter.makeHtml
+			htmlize: converter.makeHtml,
+			previewer: previewer
 		});
 
 		// Update Markdown every time content is modified
-		jQuery('.preview').bind(
+		$(previewer).bind(
 			'hallomodified',
 			function(event, data) {
 				this.showSource(data.content);
@@ -66,7 +81,7 @@ define(
 				showSource: showSource
 			})
 		);
-		jQuery('#source').bind(
+		$(sourceEditor).bind(
 			'keyup',
 			function (eData) {
 				this.updateHtml(eData.target.value);
@@ -74,6 +89,6 @@ define(
 				updateHtml: updateHtml
 			})
 		);
-		showSource(jQuery('.preview').html());
+		updateHtml(sourceEditor.value);
 	}
 );
